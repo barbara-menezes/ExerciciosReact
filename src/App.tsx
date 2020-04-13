@@ -1,14 +1,19 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Swal from "@sweetalert2/theme-dark";
+import DogDetails from './components/DogDetails';
+import logo from './logo.svg';
+import Swal from 'sweetalert2';
+import Dog from "./images/dog.jpg";
+
+var onBark = () => {
+  Swal.fire("Woof! Woof!");
+}
 
 function App() {
-
   return (
     <div className="App">
       <header className="App-header">
-        <button id="buttonAlert" onClick={() => {Swal.fire("This is the alert!")}}>Click Here</button>
+        {/* <button id="buttonAlert" onClick={() => {Swal.fire("This is the alert!")}}>Click Here</button>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
@@ -19,8 +24,9 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
-        </a>
+          Learning
+        </a> */}
+        <DogDetails name="Mylon" imagePath={Dog} onBarkButton={onBark}/>
       </header>
     </div>
   );

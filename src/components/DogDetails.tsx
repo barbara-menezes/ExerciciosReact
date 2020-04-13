@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 interface Props<T> {
     name: string;
@@ -7,11 +7,19 @@ interface Props<T> {
 }
 
 function DogDetails <T extends object>(props: Props<T>) {
+    const [count, setCount] = useState(0);
+
+    var onCounter = () => { 
+        setCount(count + 1); 
+        console.log(count);
+    }
+
     return (
-        <div className="DogDetails">
+        <div className="details">
             <button data-test="buttonBark" onClick={props.onBarkButton}>Bark</button>
             <h1 data-test="dogName" >{props.name}</h1>
             <img data-test="dogimage" src={props.imagePath} width="400" height="200" alt=""/>
+            <button data-test="buttonBark" onClick={onCounter}>Scold!</button>
         </div>
     );
 }

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1586799141518" clover="3.2.0">
-  <project timestamp="1586799141518" name="All files">
+<coverage generated="1586974151362" clover="3.2.0">
+  <project timestamp="1586974151363" name="All files">
     <metrics statements="49" coveredstatements="5" conditionals="32" coveredconditionals="0" methods="20" coveredmethods="2" elements="101" coveredelements="7" complexity="0" loc="49" ncloc="49" packages="2" files="4" classes="4"/>
     <package name="src">
       <metrics statements="44" coveredstatements="2" conditionals="32" coveredconditionals="0" methods="18" coveredmethods="1"/>
-      <file name="App.tsx" path="/home/bmenezes/Projeto/Training/ExerciciosReact/src/App.tsx">
+      <file name="App.tsx" path="/home/bmenezes/ExerciciosReact/src/App.tsx">
         <metrics statements="3" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="0" type="stmt"/>
         <line num="13" count="2" type="stmt"/>
       </file>
-      <file name="index.tsx" path="/home/bmenezes/Projeto/Training/ExerciciosReact/src/index.tsx">
+      <file name="index.tsx" path="/home/bmenezes/ExerciciosReact/src/index.tsx">
         <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="7" count="0" type="stmt"/>
         <line num="12" count="0" type="stmt"/>
       </file>
-      <file name="serviceWorker.ts" path="/home/bmenezes/Projeto/Training/ExerciciosReact/src/serviceWorker.ts">
+      <file name="serviceWorker.ts" path="/home/bmenezes/ExerciciosReact/src/serviceWorker.ts">
         <metrics statements="39" coveredstatements="0" conditionals="32" coveredconditionals="0" methods="16" coveredmethods="0"/>
         <line num="13" count="0" type="stmt"/>
         <line num="29" count="0" type="cond" truecount="0" falsecount="4"/>
@@ -60,7 +60,7 @@
     </package>
     <package name="src.components">
       <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-      <file name="DogDetails.tsx" path="/home/bmenezes/Projeto/Training/ExerciciosReact/src/components/DogDetails.tsx">
+      <file name="DogDetails.tsx" path="/home/bmenezes/ExerciciosReact/src/components/DogDetails.tsx">
         <metrics statements="5" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="10" count="4" type="stmt"/>
         <line num="12" count="4" type="stmt"/>

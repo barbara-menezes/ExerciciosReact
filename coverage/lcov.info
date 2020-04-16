@@ -1,5 +1,5 @@
 TN:
-SF:/home/bmenezes/Projeto/Training/ExerciciosReact/src/App.tsx
+SF:/home/bmenezes/ExerciciosReact/src/App.tsx
 FN:8,(anonymous_0)
 FN:12,App
 FNF:2
@@ -15,7 +15,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/home/bmenezes/Projeto/Training/ExerciciosReact/src/index.tsx
+SF:/home/bmenezes/ExerciciosReact/src/index.tsx
 FNF:0
 FNH:0
 DA:7,0
@@ -26,7 +26,7 @@ BRF:0
 BRH:0
 end_of_record
 TN:
-SF:/home/bmenezes/Projeto/Training/ExerciciosReact/src/serviceWorker.ts
+SF:/home/bmenezes/ExerciciosReact/src/serviceWorker.ts
 FN:28,register
 FN:42,(anonymous_1)
 FN:51,(anonymous_2)
@@ -138,7 +138,7 @@ BRF:32
 BRH:0
 end_of_record
 TN:
-SF:/home/bmenezes/Projeto/Training/ExerciciosReact/src/components/DogDetails.tsx
+SF:/home/bmenezes/ExerciciosReact/src/components/DogDetails.tsx
 FN:9,DogDetails
 FN:12,(anonymous_1)
 FNF:2

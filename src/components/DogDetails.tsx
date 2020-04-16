@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 
 interface Props<T> {
-    name: string;
-    imagePath: string;
-    onBarkButton: () => void;
+    name?: string;
+    imagePath?: string;
+    onBarkButton?: () => void;
 }
 
 function DogDetails <T extends object>(props: Props<T>) {
@@ -11,7 +11,7 @@ function DogDetails <T extends object>(props: Props<T>) {
 
     var onCounter = () => { 
         setCount(count + 1); 
-        console.log(count);
+        return count;
     }
 
     return (
@@ -19,7 +19,7 @@ function DogDetails <T extends object>(props: Props<T>) {
             <button data-test="buttonBark" onClick={props.onBarkButton}>Bark</button>
             <h1 data-test="dogName" >{props.name}</h1>
             <img data-test="dogimage" src={props.imagePath} width="400" height="200" alt=""/>
-            <button data-test="buttonBark" onClick={onCounter}>Scold!</button>
+            <button data-test="buttonCounter" onClick={onCounter}>Scold!</button>
         </div>
     );
 }

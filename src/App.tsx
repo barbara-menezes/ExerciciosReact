@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
-import DogDetails from './components/DogDetails';
-import logo from './logo.svg';
+import DogDetails from './components/DogDetails/DogDetails';
 import Swal from 'sweetalert2';
 import Dog from "./images/dog.jpg";
+import CreateBeerFormUseState from './components/CreateBeerFormUseState/CreateBeerFormUseState'
+//import CreateBeerForm from './components/CreateBeerForm/CreateBeerForm';
+//import logo from './logo.svg';
 
 var onBark = () => {
   Swal.fire("Woof! Woof!");
@@ -27,6 +29,7 @@ function App() {
           Learning
         </a> */}
         <DogDetails name="Mylon" imagePath={Dog} onBarkButton={onBark}/>
+        <CreateBeerFormUseState />
       </header>
     </div>
   );

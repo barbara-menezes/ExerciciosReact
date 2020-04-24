@@ -1,13 +1,13 @@
 import React from "react";
 import Counter from './Counter/Counter';
 
-interface Props<T> {
+interface Props {
     name?: string;
     imagePath?: string;
     onBarkButton?: () => void;
 }
 
-function DogDetails<T extends object>(props: Props<T>) {
+function DogDetails(props: Props) {
 
     return (
         <div className="details">

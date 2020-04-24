@@ -1,38 +1,33 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
+import React, { useState } from 'react';
+import FormTextInput from '../Form_Components/FormTextInput';
+import FormSelect from '../Form_Components/FormSelect';
+import FormCheckbox from '../Form_Components/FormCheckbox';
+import FormTextArea from '../Form_Components/FormTextArea';
 
 function CreateBeerForm() {
 
-    const { register, handleSubmit } = useForm();
+    const [beerName, setUBeerName] = useState('');
+    const [beerType, setUBeerType] = useState('');
+    const [hasCorn, setHasCorn] = useState(false);
+    const [ingredients, setIngredients] = useState('');
 
-    const onSubmit = (data: any) => { console.log(data) };
+    const handleSubmit = (event: any ) => {
+        event.preventDefault();
+        console.log(
+        "beerName:" + beerName,
+        "beerName:" + beerType,
+        "beerName:" + hasCorn,
+        "beerName:" + ingredients
+        );
+    };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="form">
-            <div className="textInput">
-                <label>Beer Name</label>
-                <input type="text" name="beerName" ref={register} required />
-            </div>
-            <div className="select">
-                <label>Beer Type</label>
-                <select name="beerType" ref={register} required >
-                    <option aria-label="None" value="" />
-                    <option value="Ale">Ale</option>
-                    <option value="Lager">Lager</option>
-                    <option value="Stout">Stout</option>
-                </select>
-            </div>
-            <div className="checkbox">
-                <label>Has Corn</label>
-                <input type="checkbox" ref={register} name="hasCorn" />
-            </div>
-            <div className="textArea">
-                <label>Ingredients</label>
-                <textarea name="ingredients" ref={register} required />
-            </div >
-            <div className="submit">
-                <button type="submit" value="addData">Submit</button>
-            </div>
+        <form onSubmit={handleSubmit}>
+            <FormTextInput value={beerName} onChange={event => setUBeerName(event.target.value)} />
+            <FormSelect value={beerType} onChange={event => setUBeerType(event.target.value)} />
+            <FormCheckbox value={hasCorn} onChange={event => setHasCorn(event.target.value)} />
+            <FormTextArea value={ingredients} onChange={event => setIngredients(event.target.value)} />
+            <button type="submit" value="addData">Submit</button>
         </form>
     )
 }

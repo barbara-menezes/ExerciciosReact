@@ -9,15 +9,13 @@ function FormSelect(props: Props) {
 
     return (
         <div className="select">
-            <label>
-                Beer Type:
-            <select name="beerType" value={props.value} onChange={props.onChange} required >
-                    <option aria-label="None" value="" />
-                    <option value="Ale">Ale</option>
-                    <option value="Lager">Lager</option>
-                    <option value="Stout">Stout</option>
-                </select>
-            </label>
+            <label htmlFor="beerType">Beer Type: </label>
+            <select data-test="beerType" name="beerType" value={props.value} onChange={props.onChange} required >
+                <option aria-label="None" value="" />
+                <option value="Ale">Ale</option>
+                <option value="Lager">Lager</option>
+                <option value="Stout">Stout</option>
+            </select>
         </div>
     )
 }

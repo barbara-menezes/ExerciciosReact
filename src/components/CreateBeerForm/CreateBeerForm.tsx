@@ -22,12 +22,12 @@ function CreateBeerForm() {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
             <FormTextInput value={beerName} onChange={event => setUBeerName(event.target.value)} />
             <FormSelect value={beerType} onChange={event => setUBeerType(event.target.value)} />
             <FormCheckbox value={hasCorn} onChange={event => setHasCorn(event.target.value)} />
             <FormTextArea value={ingredients} onChange={event => setIngredients(event.target.value)} />
-            <button type="submit" value="addData">Submit</button>
+            <button type="submit" data-test="formSubmit" name="formSubmit">Submit</button>
         </form>
     )
 }

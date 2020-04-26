@@ -9,10 +9,8 @@ function FormCheckbox(props: Props) {
 
     return (
         <div className="checkbox">
-            <label>
-                Has Corn:
-            <input value={props.value} onChange={props.onChange} type="checkbox" name="hasCorn"/>
-            </label>
+            <label htmlFor="hasCorn">Has Corn: </label>
+            <input data-test="hasCorn" type="checkbox" name="hasCorn" value={props.value} onChange={props.onChange} />
         </div>
     )
 }

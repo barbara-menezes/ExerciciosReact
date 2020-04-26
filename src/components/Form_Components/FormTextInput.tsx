@@ -9,10 +9,9 @@ function FormTextInput(props: Props) {
 
     return (
         <div className="textInput">
-            <label>
-                Beer Name:
+            <label htmlFor="beerName">Beer Name: </label>
             <input id="beerName" type="text" name="beerName" value={props.value} onChange={props.onChange} required />
-            </label>
+
         </div>
     )
 }

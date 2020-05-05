@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import FormSelect from './FormSelect';
 
 describe('DogDetails', () => {
@@ -22,7 +22,7 @@ describe('DogDetails', () => {
         expect(optionWrapper).toHaveLength(4);
     });
     it('renders text input with label (default type)', () => {
-        const wrapper = mount(<FormSelect />);
+        const wrapper = shallow(<FormSelect />);
         const label = wrapper.find('label');
         const select = wrapper.find('select');
 
@@ -34,7 +34,7 @@ describe('DogDetails', () => {
     it('Should capture beerName correctly onChange', function () {
         const onChange = jest.fn();
         const value = "Lager";
-        const component = mount(<FormSelect value={value} onChange={onChange} />);
+        const component = shallow(<FormSelect value={value} onChange={onChange} />);
         const option = component.find('option').at(2);
 
         expect(option.props().value).toEqual(value);

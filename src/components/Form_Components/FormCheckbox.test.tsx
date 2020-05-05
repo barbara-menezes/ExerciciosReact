@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import FormCheckbox from './FormCheckbox';
 
 describe('DogDetails', () => {
@@ -20,7 +20,7 @@ describe('DogDetails', () => {
         expect(inputWrapper).toHaveLength(1);
     });
     it('renders text input with label (default type)', () => {
-        const wrapper = mount(<FormCheckbox />);
+        const wrapper = shallow(<FormCheckbox />);
         const label = wrapper.find('label');
         const input = wrapper.find('input');
 
@@ -32,8 +32,8 @@ describe('DogDetails', () => {
     });
     it('Should capture beerName correctly onChange', function () {
         const onChange = jest.fn();
-        const value = false;
-        const component = mount(<FormCheckbox value={value} onChange={onChange} />);
+        const value = true;
+        const component = shallow(<FormCheckbox value={value} onChange={onChange} />);
         const input = component.find('input').at(0);
 
         expect(input.props().value).toEqual(value);

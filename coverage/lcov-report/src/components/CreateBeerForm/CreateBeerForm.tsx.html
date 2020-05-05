@@ -22,30 +22,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>3/4</span>
+                <span class='fraction'>8/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">33.33% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>2/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">66.67% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>8/12</span>
             </div>
         
             
@@ -94,81 +94,78 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a>
-<a name='L40'></a><a href='#L40'>40</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { useForm } from 'react-hook-form';
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from 'react';
+import FormTextInput from '../Form_Components/FormTextInput';
+import FormSelect from '../Form_Components/FormSelect';
+import FormCheckbox from '../Form_Components/FormCheckbox';
+import FormTextArea from '../Form_Components/FormTextArea';
 &nbsp;
 function CreateBeerForm() {
 &nbsp;
-    const { register, handleSubmit } = useForm();
+    const [beerName, setUBeerName] = useState('');
+    const [beerType, setUBeerType] = useState('');
+    const [hasCorn, setHasCorn] = useState(false);
+    const [ingredients, setIngredients] = useState('');
 &nbsp;
-    const onSubmit = <span class="fstat-no" title="function not covered" >(d</span>ata: any) =&gt; { <span class="cstat-no" title="statement not covered" >console.log(data) </span>};
+    const handleSubmit = (event: any) =&gt; {
+        event.preventDefault();
+        console.log(
+            "beerName:" + beerName,
+            "beerName:" + beerType,
+            "beerName:" + hasCorn,
+            "beerName:" + ingredients
+        );
+    };
 &nbsp;
     return (
-        &lt;form onSubmit={handleSubmit(onSubmit)} className="form"&gt;
-            &lt;div className="textInput"&gt;
-                &lt;label&gt;Beer Name&lt;/label&gt;
-                &lt;input type="text" name="beerName" ref={register} required /&gt;
-            &lt;/div&gt;
-            &lt;div className="select"&gt;
-                &lt;label&gt;Beer Type&lt;/label&gt;
-                &lt;select name="beerType" ref={register} required &gt;
-                    &lt;option aria-label="None" value="" /&gt;
-                    &lt;option value="Ale"&gt;Ale&lt;/option&gt;
-                    &lt;option value="Lager"&gt;Lager&lt;/option&gt;
-                    &lt;option value="Stout"&gt;Stout&lt;/option&gt;
-                &lt;/select&gt;
-            &lt;/div&gt;
-            &lt;div className="checkbox"&gt;
-                &lt;label&gt;Has Corn&lt;/label&gt;
-                &lt;input type="checkbox" ref={register} name="hasCorn" /&gt;
-            &lt;/div&gt;
-            &lt;div className="textArea"&gt;
-                &lt;label&gt;Ingredients&lt;/label&gt;
-                &lt;textarea name="ingredients" ref={register} required /&gt;
-            &lt;/div &gt;
-            &lt;div className="submit"&gt;
-                &lt;button type="submit" value="addData"&gt;Submit&lt;/button&gt;
-            &lt;/div&gt;
+        &lt;form className="form" onSubmit={handleSubmit}&gt;
+            &lt;FormTextInput value={beerName} onChange={<span class="fstat-no" title="function not covered" >ev</span>ent =&gt; <span class="cstat-no" title="statement not covered" >setUBeerName(event.target.value)}</span> /&gt;
+            &lt;FormSelect value={beerType} onChange={<span class="fstat-no" title="function not covered" >ev</span>ent =&gt; <span class="cstat-no" title="statement not covered" >setUBeerType(event.target.value)}</span> /&gt;
+            &lt;FormCheckbox value={hasCorn}
+                onChange={<span class="fstat-no" title="function not covered" >ev</span>ent =&gt;
+<span class="cstat-no" title="statement not covered" >                    setHasCorn(event.target.value ? event.target.checked : event.target.value)</span>
+                }
+            /&gt;
+            &lt;FormTextArea value={ingredients} onChange={<span class="fstat-no" title="function not covered" >ev</span>ent =&gt; <span class="cstat-no" title="statement not covered" >setIngredients(event.target.value)}</span> /&gt;
+            &lt;button type="submit" data-test="formSubmit" name="formSubmit"&gt;Submit&lt;/button&gt;
         &lt;/form&gt;
     )
 }
@@ -180,7 +177,7 @@ export default CreateBeerForm;</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 23 2020 09:57:22 GMT-0300 (GMT-03:00)
+                at Thu Apr 30 2020 09:42:44 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

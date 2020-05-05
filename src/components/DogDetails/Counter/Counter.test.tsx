@@ -25,12 +25,12 @@ describe('Counter', () => {
     expect(wrapper.childAt(1).type()).toBe('p');
   });
   it('Should show the initial value', () => {
-    const wrapper = mount(<Counter initialCount={5} />);
+    const wrapper = shallow(<Counter initialCount={5} />);
     expect(wrapper.text()).toBe('Scold!You clicked 5 times');
   });
 
   it('Should increment value after click on "Increment"', () => {
-    const wrapper = mount(<Counter initialCount={5} />);
+    const wrapper = shallow(<Counter initialCount={5} />);
     wrapper.find('button').simulate('click');
 
     expect(wrapper.text()).toBe('Scold!You clicked 6 times');

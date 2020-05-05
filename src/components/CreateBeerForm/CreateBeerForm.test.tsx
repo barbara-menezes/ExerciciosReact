@@ -1,5 +1,5 @@
 import React from "react";
-import Enzyme, { shallow, mount } from "enzyme";
+import Enzyme, { shallow } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import CreateBeerForm from './CreateBeerForm';
 
@@ -14,14 +14,12 @@ describe("Title input", () => {
     });
     it('Should check the tags created on the function', () => {
         const wrapper = shallow(<CreateBeerForm />);
-        const formWrapper = wrapper.find('form');
         const formCheckboxWrapper = wrapper.find('FormCheckbox');
         const formSelectWrapper = wrapper.find('FormSelect');
         const formTextAreaWrapper = wrapper.find('FormTextArea');
         const formTextInputWrapper = wrapper.find('FormTextInput');
         const buttonWrapper = wrapper.find('button');
 
-        expect(formWrapper).toHaveLength(1);
         expect(formCheckboxWrapper).toHaveLength(1);
         expect(formSelectWrapper).toHaveLength(1);
         expect(formTextAreaWrapper).toHaveLength(1);
@@ -29,7 +27,7 @@ describe("Title input", () => {
         expect(buttonWrapper).toHaveLength(1);
     });
     it('renders text input with label (default type)', () => {
-        const wrapper = mount(<CreateBeerForm />);
+        const wrapper = shallow(<CreateBeerForm />);
         const button = wrapper.find('button');
         
         expect(button.prop('type')).toEqual('submit');
@@ -37,14 +35,13 @@ describe("Title input", () => {
         expect(button.prop('data-test')).toEqual('formSubmit');
     });
     it('calls onSubmit prop function when form is submitted', () => {
-        const state = { beerName: 'hello', beerType: 'world', hasCorn: true, ingredients: "teste1, teste2" }
-        const expectedArg = "beerName: hello, beerType: world, hasCorn: true, ingredients: teste1, teste2";
-        const onSubmitFn = jest.fn();
-        const component = mount(<CreateBeerForm onChange={onSubmitFn} />);
-        console.log = jest.fn().mockReturnValue(state);
-        component.find('form').simulate('submit')
+        console.log = jest.fn();
+        const component = shallow(<CreateBeerForm />);
 
-        expect(onSubmitFn).toHaveBeenCalledTimes(1);
-        expect(onSubmitFn).toHaveBeenCalledWith(expectedArg);
+        component.find('form').simulate('submit', {
+            preventDefault: jest.fn()
+        });
+
+        expect(console.log).toHaveBeenCalledTimes(1);
     });
 });

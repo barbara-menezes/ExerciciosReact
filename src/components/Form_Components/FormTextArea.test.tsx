@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import FormTextArea from './FormTextArea';
 
 describe('DogDetails', () => {
@@ -20,7 +20,7 @@ describe('DogDetails', () => {
         expect(textAreaWrapper).toHaveLength(1);
     });
     it('renders text input with label (default type)', () => {
-        const wrapper = mount(<FormTextArea />);
+        const wrapper = shallow(<FormTextArea />);
         const label = wrapper.find('label');
         const textarea = wrapper.find('textarea');
 
@@ -32,7 +32,7 @@ describe('DogDetails', () => {
     it('Should capture beerName correctly onChange', function () {
         const onChange = jest.fn();
         const value = "teste1, teste2, teste3";
-        const component = mount(<FormTextArea value={value} onChange={onChange} />);
+        const component = shallow(<FormTextArea value={value} onChange={onChange} />);
         const textarea = component.find('textarea').at(0);
 
         expect(textarea.props().value).toEqual(value);

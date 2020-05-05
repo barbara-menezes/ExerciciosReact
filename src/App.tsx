@@ -4,7 +4,7 @@ import DogDetails from './components/DogDetails/DogDetails';
 import Swal from 'sweetalert2';
 import Dog from "./images/dog.jpg";
 import CreateBeerForm from './components/CreateBeerForm/CreateBeerForm'
-//import CreateBeerFormikForm from './components/CreateBeerFormikForm/CreateBeerFormikForm';
+import CreateBeerFormikForm from './components/CreateBeerFormikForm/CreateBeerFormikForm';
 //import logo from './logo.svg';
 
 var onBark = () => {
@@ -30,6 +30,7 @@ function App() {
         </a> */}
         <DogDetails name="Mylon" imagePath={Dog} onBarkButton={onBark}/>
         <CreateBeerForm />
+        <CreateBeerFormikForm />
       </header>
     </div>
   );

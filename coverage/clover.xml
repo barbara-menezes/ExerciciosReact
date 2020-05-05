@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1587646642624" clover="3.2.0">
-  <project timestamp="1587646642624" name="All files">
-    <metrics statements="65" coveredstatements="9" conditionals="32" coveredconditionals="0" methods="37" coveredmethods="5" elements="134" coveredelements="14" complexity="0" loc="65" ncloc="65" packages="6" files="11" classes="11"/>
+<coverage generated="1588250564398" clover="3.2.0">
+  <project timestamp="1588250564398" name="All files">
+    <metrics statements="78" coveredstatements="18" conditionals="34" coveredconditionals="0" methods="45" coveredmethods="10" elements="157" coveredelements="28" complexity="0" loc="78" ncloc="78" packages="7" files="15" classes="15"/>
     <package name="src">
       <metrics statements="44" coveredstatements="2" conditionals="32" coveredconditionals="0" methods="18" coveredmethods="1"/>
       <file name="App.tsx" path="/home/bmenezes/ExerciciosReact/src/App.tsx">
@@ -59,12 +59,21 @@
       </file>
     </package>
     <package name="src.components.CreateBeerForm">
-      <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
+      <metrics statements="12" coveredstatements="8" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="2"/>
       <file name="CreateBeerForm.tsx" path="/home/bmenezes/ExerciciosReact/src/components/CreateBeerForm/CreateBeerForm.tsx">
-        <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="8" count="4" type="stmt"/>
+        <metrics statements="12" coveredstatements="8" conditionals="2" coveredconditionals="0" methods="6" coveredmethods="2"/>
+        <line num="9" count="4" type="stmt"/>
         <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="24" count="4" type="stmt"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="30" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="33" count="0" type="stmt"/>
       </file>
     </package>
     <package name="src.components.CreateBeerFormikForm">
@@ -88,6 +97,25 @@
         <line num="5" count="6" type="stmt"/>
         <line num="6" count="6" type="stmt"/>
         <line num="8" count="6" type="stmt"/>
+      </file>
+    </package>
+    <package name="src.components.Form_Components">
+      <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="FormCheckbox.tsx" path="/home/bmenezes/ExerciciosReact/src/components/Form_Components/FormCheckbox.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="5" type="stmt"/>
+      </file>
+      <file name="FormSelect.tsx" path="/home/bmenezes/ExerciciosReact/src/components/Form_Components/FormSelect.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="5" type="stmt"/>
+      </file>
+      <file name="FormTextArea.tsx" path="/home/bmenezes/ExerciciosReact/src/components/Form_Components/FormTextArea.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="5" type="stmt"/>
+      </file>
+      <file name="FormTextInput.tsx" path="/home/bmenezes/ExerciciosReact/src/components/Form_Components/FormTextInput.tsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="10" count="5" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Formik_Components">

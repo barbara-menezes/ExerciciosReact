@@ -1,37 +1,37 @@
 import React from 'react';
-import { Formik } from 'formik';
+import { FastField, FieldProps } from 'formik';
 import Select from '@material-ui/core/Select';
 import { InputLabel, FormControl } from '@material-ui/core';
 
-function FormikSelect() {
-    return (
-        <div>
-            <Formik
-                initialValues={{ beerType: '' }}
-                onSubmit={data => {
-                    console.log("submit:", data);
-                }}
-            >
-                {({ values, handleChange, handleBlur, handleSubmit }) => (
+interface Props {
+    name: string;
+    type?: 'text' | 'number' | 'password' | 'textarea';
+    placeholder?: string;
+}
 
-                    <form className="form" onSubmit={handleSubmit}>
-                        <FormControl variant="outlined">
-                            <InputLabel htmlFor="outlined-age-native-simple">Types</InputLabel>
-                            <Select
-                                native
-                                value={values.beerType}
-                                onChange={handleChange}
-                            >
-                                <option aria-label="None" value=""/>
-                                <option value="Ale">Ale</option>
-                                <option value="Lager">Lager</option>
-                                <option value="Stout">Stout</option>
-                            </Select>
-                        </FormControl>
-                    </form>
-                )}
-            </Formik>
-        </div>
+function FormikSelect(props: Props) {
+    return (
+        <FastField name={props.name}>
+            {(fieldProps: FieldProps) => {
+                return (
+                    <FormControl>
+                        <InputLabel htmlFor="demo">Beer Type</InputLabel>
+                        <Select
+                            data-test-id="beertype-formik"
+                            name={fieldProps.field.name}
+                            value={fieldProps.field.value || 'Ale'}
+                            onChange={fieldProps.field.onChange}
+                            onBlur={fieldProps.field.onBlur}
+                            placeholder={props.placeholder || ''}
+                        >
+                            <option value="Ale">Ale</option>
+                            <option value="Lager">Lager</option>
+                            <option value="Stout">Stout</option>
+                        </Select>
+                    </FormControl>
+                );
+            }}
+        </FastField>
     );
 }
 

@@ -1,35 +1,33 @@
 import React from 'react';
-import { Formik } from 'formik';
+import { FastField, FieldProps } from 'formik';
 import TextField from '@material-ui/core/TextField';
 
-function FormikTextArea() {
-    return (
-        <div>
-            <Formik
-                initialValues={{ ingredients: '' }}
-                onSubmit={data => {
-                    console.log("submit:", data);
-                }}
-            >
-                {({ values, handleChange, handleBlur, handleSubmit }) => (
-
-                    <form className="form" onSubmit={handleSubmit}>
-                        <TextField
-                            data-test="ImputIngredients"
-                            name="ingredients"
-                            placeholder="malte"
-                            label="Ingredients"
-                            variant="outlined"
-                            multiline
-                            rows={3}
-                            value={values.ingredients}
-                            onChange={handleChange}
-                        />
-                    </form>
-                )}
-            </Formik>
-        </div>
-    );
+interface Props {
+    name: string;
+    type?: 'text' | 'number' | 'password' | 'textarea';
+    placeholder?: string;
 }
 
+function FormikTextArea(props: Props) {
+    return (
+        <FastField name={props.name}>
+            {(fieldProps: FieldProps) => {
+                return (
+                    <TextField
+                        data-test-id='ingredients-formik'
+                        name={fieldProps.field.name}
+                        value={fieldProps.field.value || ''}
+                        onChange={fieldProps.field.onChange}
+                        onBlur={fieldProps.field.onBlur}
+                        type={props.type || 'text'}
+                        placeholder={props.placeholder || ''}
+                        variant="outlined"
+                        multiline
+                        rows={3}
+                    />
+                );
+            }}
+        </FastField>
+    );
+}
 export default FormikTextArea;

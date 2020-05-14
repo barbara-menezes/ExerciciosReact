@@ -22,30 +22,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -98,23 +98,23 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,37 +129,37 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { Formik } from 'formik';
+import { FastField, FieldProps } from 'formik';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 &nbsp;
-function <span class="fstat-no" title="function not covered" >FormikCheckbox(</span>) {
-<span class="cstat-no" title="statement not covered" >    return (</span>
-        &lt;div&gt;
-            &lt;Formik
-                initialValues={{ hasCorn: true }}
-                onSubmit={<span class="fstat-no" title="function not covered" >da</span>ta =&gt; {
-<span class="cstat-no" title="statement not covered" >                    console.log("submit:", data);</span>
-                }}
-            &gt;
-                {<span class="fstat-no" title="function not covered" >({</span> values, setFieldValue, handleBlur, handleSubmit }) =&gt; (
-<span class="cstat-no" title="statement not covered" >                    &lt;form className="form" onSubmit={handleSubmit}&gt;</span>
-                        &lt;FormControlLabel
-                            control={
-                                &lt;Checkbox
-                                    data-test="CheckboxHasCorn"
-                                    name="hasCorn"
-                                    checked={values.hasCorn}
-                                    onChange={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >setFieldValue("hasCorn", !values.hasCorn)}</span> color="primary"
-                                /&gt;
-                            }
-                            label="Start"
-                            labelPlacement="start"
-                        /&gt;
-                    &lt;/form&gt;
-                )}
-            &lt;/Formik&gt;
-        &lt;/div&gt;
+interface Props {
+    name: string;
+    type?: 'text' | 'number' | 'password' | 'textarea';
+    placeholder?: string;
+}
+&nbsp;
+function FormikCheckbox(props: Props) {
+    return (
+        &lt;FastField name={props.name}&gt;
+            {(fieldProps: FieldProps) =&gt; {
+                return (
+                    &lt;FormControlLabel
+                        control={
+                            &lt;Checkbox
+                                data-test="ImputIngredients"
+                                name={fieldProps.field.name}
+                                value={fieldProps.field.value || false}
+                                onChange={fieldProps.field.onChange}
+                                onBlur={fieldProps.field.onBlur}
+                            /&gt;
+                        }
+                        label="Has Corn"
+                        labelPlacement="start"
+                    /&gt;
+                );
+            }}
+        &lt;/FastField&gt;
     );
 }
 &nbsp;
@@ -171,7 +171,7 @@ export default FormikCheckbox;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Apr 30 2020 09:42:44 GMT-0300 (GMT-03:00)
+                at Wed May 06 2020 11:17:40 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../../../prettify.js"></script>

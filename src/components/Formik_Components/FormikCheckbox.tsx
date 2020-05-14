@@ -1,35 +1,35 @@
 import React from 'react';
-import { Formik } from 'formik';
+import { FastField, FieldProps } from 'formik';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
-function FormikCheckbox() {
+interface Props {
+    name: string;
+    type?: 'text' | 'number' | 'password' | 'textarea';
+    placeholder?: string;
+}
+
+function FormikCheckbox(props: Props) {
     return (
-        <div>
-            <Formik
-                initialValues={{ hasCorn: true }}
-                onSubmit={data => {
-                    console.log("submit:", data);
-                }}
-            >
-                {({ values, setFieldValue, handleBlur, handleSubmit }) => (
-                    <form className="form" onSubmit={handleSubmit}>
-                        <FormControlLabel
-                            control={
-                                <Checkbox
-                                    data-test="CheckboxHasCorn"
-                                    name="hasCorn"
-                                    checked={values.hasCorn}
-                                    onChange={() => setFieldValue("hasCorn", !values.hasCorn)} color="primary"
-                                />
-                            }
-                            label="Start"
-                            labelPlacement="start"
-                        />
-                    </form>
-                )}
-            </Formik>
-        </div>
+        <FastField name={props.name}>
+            {(fieldProps: FieldProps) => {
+                return (
+                    <FormControlLabel
+                        control={
+                            <Checkbox
+                                data-test-id='hascorn-formik'
+                                name={fieldProps.field.name}
+                                value={fieldProps.field.value || false}
+                                onChange={fieldProps.field.onChange}
+                                onBlur={fieldProps.field.onBlur}
+                            />
+                        }
+                        label="Has Corn"
+                        labelPlacement="start"
+                    />
+                );
+            }}
+        </FastField>
     );
 }
 

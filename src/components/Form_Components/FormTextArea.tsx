@@ -10,7 +10,7 @@ function FormTextArea(props: Props) {
     return (
         <div className="textArea">
             <label htmlFor="ingredients">Ingredients: </label>
-            <textarea data-test="ingredients" name="ingredients" value={props.value} onChange={props.onChange} required />
+            <textarea data-test="ingredients" name="ingredients" value={props.value} onChange={props.onChange} />
         </div >
     )
 }

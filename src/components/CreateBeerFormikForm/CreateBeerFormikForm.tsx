@@ -5,16 +5,17 @@ import FormikCheckbox from '../Formik_Components/FormikCheckbox';
 import FormikTextArea from '../Formik_Components/FormikTextArea';
 import { Formik, Form } from 'formik';
 import * as yup from 'yup';
+import { Button } from '@material-ui/core';
 const validations = yup.object().shape({
     beerName: yup.string().min(3, 'Beer Name must have at least 3 characters').required('Beer Name is required'),
-    beerType: yup.object().required('Beer Type is required').default('Ale'),
+    beerType: yup.string().required('Beer Type is required'),
     ingredients: yup.string().min(3, 'Ingredients must have at least 3 characters').required('Ingredients is required')
 });
 
 function CreateBeerFormikForm() {
     return (
         <Formik
-            initialValues={{ beerName: '', beerType: '', hasCorn: '', ingredients: '' }}
+            initialValues={{ beerName: '', beerType: 'Ale', hasCorn: '', ingredients: '' }}
             onSubmit={data => {
                 console.log(data);
             }}
@@ -24,11 +25,11 @@ function CreateBeerFormikForm() {
                 <Form className='form'>
                     <div>
                         {touched && touched.beerName && errors && errors.beerName && <p>{errors.beerName}</p>}
-                        <FormikTextInput type='text' name='beerName' placeholder='beerName' data-test-id="beername-formik"/>
+                        <FormikTextInput type='text' name='beerName' placeholder='beerName' data-test-id="beername-formik" />
                     </div>
                     <div>
                         {touched && touched.beerType && errors && errors.beerType && <p>{errors.beerType}</p>}
-                        <FormikSelect name='beerType' placeholder='beerType' data-test-id='beertype-formik'/>
+                        <FormikSelect name='beerType' placeholder='beerType' data-test-id='beertype-formik' />
                     </div>
                     <div>
                         {touched && touched.hasCorn && errors && errors.hasCorn && <p>{errors.hasCorn}</p>}
@@ -36,16 +37,17 @@ function CreateBeerFormikForm() {
                     </div>
                     <div>
                         {touched && touched.ingredients && errors && errors.ingredients && <p>{errors.ingredients}</p>}
-                        <FormikTextArea type='text' name='ingredients' placeholder='ingredients' data-test-id='ingredients-formik'/>
+                        <FormikTextArea type='text' name='ingredients' placeholder='ingredients' data-test-id='ingredients-formik' />
                     </div>
-                    <button
+                    <Button
                         data-test="formSubmit"
                         color="primary"
                         type="submit"
-                        disabled={Object.keys(errors).length !== 0}
+                        variant="contained"
+                        disabled={Object.keys(errors).length === 0 ? false : true}
                     >
                         Submit
-                    </button>
+                    </Button>
                 </Form>
             )}
         </Formik>

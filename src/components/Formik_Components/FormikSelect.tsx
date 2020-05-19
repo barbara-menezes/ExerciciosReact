@@ -24,9 +24,9 @@ function FormikSelect(props: Props) {
                             onBlur={fieldProps.field.onBlur}
                             placeholder={props.placeholder || ''}
                         >
-                            <option value="Ale">Ale</option>
-                            <option value="Lager">Lager</option>
-                            <option value="Stout">Stout</option>
+                            <option value={"Ale"}>Ale</option>
+                            <option value={"Lager"}>Lager</option>
+                            <option value={"Stout"}>Stout</option>
                         </Select>
                     </FormControl>
                 );

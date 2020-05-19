@@ -12,23 +12,23 @@ describe("<CreateBeerFormikForm />", () => {
 
     expect(wrapper.exists()).toBe(true);
     expect(wrapper.type()).toBe(Formik);
-  });
-  it('Should check the tags created on the function', () => {
-    const wrapper = shallow(<CreateBeerFormikForm />)
-      .renderProp('children')({});
-    const formikTextInputWrapper = wrapper.find('FormikTextInput');
-    const formikSelectWrapper = wrapper.find('FormikSelect');
-    const formikCheckboxWrapper = wrapper.find('FormikCheckbox');
-    const formikTextAreaWrapper = wrapper.find('FormikTextArea');
-    const buttonWrapper = wrapper.find('button');
+   });
+  // it('Should check the tags created on the function', () => {
+  //   const wrapper = shallow(<CreateBeerFormikForm />)
+  //     .renderProp('children')({});
+  //   const formikTextInputWrapper = wrapper.find('FormikTextInput');
+  //   const formikSelectWrapper = wrapper.find('FormikSelect');
+  //   const formikCheckboxWrapper = wrapper.find('FormikCheckbox');
+  //   const formikTextAreaWrapper = wrapper.find('FormikTextArea');
+  //   const buttonWrapper = wrapper.find('button');
 
-    expect(wrapper.find('Form').prop('className')).toBe('form');
-    expect(formikCheckboxWrapper).toHaveLength(1);
-    expect(formikSelectWrapper).toHaveLength(1);
-    expect(formikTextAreaWrapper).toHaveLength(1);
-    expect(formikTextInputWrapper).toHaveLength(1);
-    expect(buttonWrapper).toHaveLength(1);
-  });
+  //   expect(wrapper.find('Form').prop('className')).toBe('form');
+  //   expect(formikCheckboxWrapper).toHaveLength(1);
+  //   expect(formikSelectWrapper).toHaveLength(1);
+  //   expect(formikTextAreaWrapper).toHaveLength(1);
+  //   expect(formikTextInputWrapper).toHaveLength(1);
+  //   expect(buttonWrapper).toHaveLength(1);
+  // });
   // it("submits when values are correct", () => {
   //   console.log = jest.fn();
   //   initialValues={{ beerName: '', beerType: '', hasCorn: '', ingredients: '' }}

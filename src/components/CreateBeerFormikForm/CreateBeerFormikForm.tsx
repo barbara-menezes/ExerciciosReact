@@ -23,6 +23,7 @@ function CreateBeerFormikForm() {
         >
             {({ errors, touched }) => (
                 <Form className='form'>
+                    <div style={{color: "black"}}>Formik</div>
                         <div>
                             {touched && touched.beerName && errors && errors.beerName && <p style={{color: "red"}}>{errors.beerName}</p>}
                             <FormikTextInput type='text' name='beerName' placeholder='beerName' data-test-id="beername-formik" />

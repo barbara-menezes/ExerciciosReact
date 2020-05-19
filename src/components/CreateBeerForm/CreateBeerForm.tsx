@@ -71,6 +71,7 @@ function CreateBeerForm() {
 
     return (
         <form className="form" onSubmit={onSubmit}>
+            <div>React Form</div>
             <div>
                 {beerNameError && <p style={{color: "red"}}>{beerNameError}</p>}
                 <FormTextInput value={beerName} onChange={event => setBeerName(event.target.value)} />

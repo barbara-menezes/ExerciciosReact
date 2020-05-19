@@ -51,7 +51,6 @@ function CreateBeerForm() {
             setIngredientsError('');
         }
 
-        console.log(counter);
         if (counter === 0) {
             return false;
         } else {

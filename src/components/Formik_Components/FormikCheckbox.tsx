@@ -26,6 +26,7 @@ function FormikCheckbox(props: Props) {
                         }
                         label="Has Corn"
                         labelPlacement="start"
+                        style={{color: "black"}}
                     />
                 );
             }}

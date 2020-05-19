@@ -23,7 +23,7 @@ function FormikTextArea(props: Props) {
                         placeholder={props.placeholder || ''}
                         variant="outlined"
                         multiline
-                        rows={3}
+                        rows={2}
                     />
                 );
             }}

@@ -72,18 +72,18 @@ function CreateBeerForm() {
     return (
         <form className="form" onSubmit={onSubmit}>
             <div>
-                {beerNameError && <p>{beerNameError}</p>}
+                {beerNameError && <p style={{color: "red"}}>{beerNameError}</p>}
                 <FormTextInput value={beerName} onChange={event => setBeerName(event.target.value)} />
             </div>
             <div>
-                {beerTypeError && <p>{beerTypeError}</p>}
+                {beerTypeError && <p style={{color: "red"}}>{beerTypeError}</p>}
                 <FormSelect value={beerType} onChange={event => setBeerType(event.target.value)} />
             </div>
             <div>
                 <FormCheckbox value={hasCorn} onChange={event => setHasCorn(event.target.value ? event.target.checked : event.target.value)} />
             </div>
             <div>
-                {ingredientsError && <p>{ingredientsError}</p>}
+                {ingredientsError && <p style={{color: "red"}}>{ingredientsError}</p>}
                 <FormTextArea value={ingredients} onChange={event => setIngredients(event.target.value)} />
             </div>
             <button disabled={disable} type="submit" data-test="formSubmit" name="formSubmit" >Submit</button>

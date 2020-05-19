@@ -23,30 +23,30 @@ function CreateBeerFormikForm() {
         >
             {({ errors, touched }) => (
                 <Form className='form'>
-                    <div>
-                        {touched && touched.beerName && errors && errors.beerName && <p>{errors.beerName}</p>}
-                        <FormikTextInput type='text' name='beerName' placeholder='beerName' data-test-id="beername-formik" />
-                    </div>
-                    <div>
-                        {touched && touched.beerType && errors && errors.beerType && <p>{errors.beerType}</p>}
-                        <FormikSelect name='beerType' placeholder='beerType' data-test-id='beertype-formik' />
-                    </div>
-                    <div>
-                        {touched && touched.hasCorn && errors && errors.hasCorn && <p>{errors.hasCorn}</p>}
-                        <FormikCheckbox name='hasCorn' placeholder='hasCorn' data-test-id='hascorn-formik' />
-                    </div>
-                    <div>
-                        {touched && touched.ingredients && errors && errors.ingredients && <p>{errors.ingredients}</p>}
-                        <FormikTextArea type='text' name='ingredients' placeholder='ingredients' data-test-id='ingredients-formik' />
-                    </div>
-                    <Button
-                        data-test="formSubmit"
-                        color="primary"
-                        type="submit"
-                        variant="contained"
-                        disabled={Object.keys(errors).length === 0 ? false : true}
-                    >
-                        Submit
+                        <div>
+                            {touched && touched.beerName && errors && errors.beerName && <p style={{color: "red"}}>{errors.beerName}</p>}
+                            <FormikTextInput type='text' name='beerName' placeholder='beerName' data-test-id="beername-formik" />
+                        </div>
+                        <div>
+                            {touched && touched.beerType && errors && errors.beerType && <p style={{color: "red"}}>{errors.beerType}</p>}
+                            <FormikSelect name='beerType' placeholder='beerType' data-test-id='beertype-formik' />
+                        </div>
+                        <div>
+                            {touched && touched.hasCorn && errors && errors.hasCorn && <p style={{color: "red"}}>{errors.hasCorn}</p>}
+                            <FormikCheckbox name='hasCorn' placeholder='hasCorn' data-test-id='hascorn-formik' />
+                        </div>
+                        <div>
+                            {touched && touched.ingredients && errors && errors.ingredients && <p style={{color: "red"}}>{errors.ingredients}</p>}
+                            <FormikTextArea type='text' name='ingredients' placeholder='ingredients' data-test-id='ingredients-formik' />
+                        </div>
+                        <Button
+                            data-test="formSubmit"
+                            color="primary"
+                            type="submit"
+                            variant="contained"
+                            disabled={Object.keys(errors).length === 0 ? false : true}
+                        >
+                            Submit
                     </Button>
                 </Form>
             )}
